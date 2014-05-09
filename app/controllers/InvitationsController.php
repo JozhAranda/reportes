@@ -51,20 +51,20 @@ class InvitationsController extends BaseController {
 
 			if ($validator->fails()) 
 				
-				throw new Exception($validator->messages());
+				return Redirect::to('invitations/')->with('error', 'Error, formulario vacio.');//throw new Exception($validator->messages());
 			
 			else {	
 
 				$invitation->save();
 
 				Mail::send('invitations.notification.welcome', array('email'=>Input::get('email'), 'token'=>Input::get('token_id')), function($message) {
-				    $message->to(Input::get('email'), 'Invitation')->subject('Welcome to Tickets App');
+				    $message->to(Input::get('email'), 'Invitación')->subject('Bienvenido a Tickets App');
 				});
 			}
 		} 
 		catch(Exception $ex)
 		{
-			Log::error($ex->getMessage());
+			return Redirect::to('invitations/')->with('error', 'Error, invitación existente.');//Log::error($ex->getMessage());
 		}
 
 		return Redirect::to('invitations/');
@@ -117,16 +117,25 @@ class InvitationsController extends BaseController {
 				$user->status 	= 1;
 				$user->role_id  = $row->role_id;
 
-				$user->save();
+				//$validator = Validator::make($row, User::$rules_token);
+
+				//if ($validator->fails()) 
+					
+				//	return Redirect::to('/')->with('notice', 'Error, correo electrónico existente.');//throw new Exception($validator->messages());
+				
+				//else 
+
+					$user->save();
 			}
 			/*End insert user*/
 		} 
 		catch(Exception $ex)
 		{
+			//return Redirect::to('/')->with('notice', 'Error, correo electrónico existente.');
 			Log::error($ex->getMessage());
 		}
 		
-		return Redirect::to('/')->with('notice', $pass);
+		return Redirect::to('/')->with('notice', 'Tu contraseña es: '.$pass);
 	}
 
 	/**

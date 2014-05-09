@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12">
-	<h1>Send Invitation</h1>
+	<h1>Enviar Invitación</h1>
 
 	<hr>
 

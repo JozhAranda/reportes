@@ -1,5 +1,5 @@
 <div class="form-group">
-	{{ Form::label('email', 'Email') }}
+	{{ Form::label('email', 'Correo electrónico') }}
 	{{ Form::email('email', null, array('class' => 'form-control')) }}
 </div>
 
@@ -10,17 +10,17 @@
 </div>
 
 <div class="form-group">
-	<div class="col-md-6 pull-left">
-	{{ Form::label('role_id', 'Role') }}
+	<div class="col-md-6" style="margin-left: -15px;">
+	{{ Form::label('role_id', 'Role de usuario') }}
 	{{ Form::select('role_id', $role, null, array('class'=>'form-control')) }}
 	</div>
-	<div class="col-md-6">
-	{{ Form::label('area_id', 'Area') }}
+	<div class="col-md-6" style="margin-left: -15px;">
+	{{ Form::label('area_id', 'Area de servicio') }}
 	{{ Form::select('area_id', $area, null, array('class'=>'form-control')) }}
 	</div>
 </div>
 
 <div class="form-group" style="margin-top: 100px;">
 	<input type="button" id="referer" class="btn btn-default" value="Cancel">
-	{{ Form::submit('Send', array('class' => 'btn btn-success', 'id' => 'btn-invitation')) }}
+	{{ Form::submit(trans('buttons.send'), array('class' => 'btn btn-success', 'id' => 'btn-invitation')) }}
 </div>

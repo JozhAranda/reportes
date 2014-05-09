@@ -5,7 +5,7 @@
 {{ Form::open(array('url' => 'foo/bar','role'=>'form','class'=>'col-lg-5 center-block')) }}
 
   @if(Session::has('notice'))
-    <p class="bg-info" style="padding:15px"> Your password is: {{ Session::get('notice') }} </p>
+    <p class="bg-info" style="padding:15px"> {{ Session::get('notice') }} </p>
   @endif  
     
     <div class="form-group">

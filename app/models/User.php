@@ -52,6 +52,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->email;
     }
 
+    /**
+     * Set rules
+     */
+    public static $rules_token = array(
+        'email' => 'Unique:users' 
+    );
+
     public function role() {
         return $this->belongsTo('Role');
     }

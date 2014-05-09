@@ -3,15 +3,15 @@
 
 @section('content')
 <div class="col-md-12">
-	<h1>Invitations</h1>
+	<h1>Invitaciones</h1>
 	<hr>
 	
-	@if(Session::has('notice'))
-		<p class="bg-danger" style="padding:15px"> Error: {{ Session::get('notice') }} </p>
+	@if(Session::has('error'))
+		<p class="bg-danger" style="padding:15px"> Error: {{ Session::get('error') }} </p>
 	@endif 
 	
 	<div class="form-group">
-		{{ link_to_route('invitations.create', 'Create Invitation', null, ['class' => 'btn btn-success']) }}
+		{{ link_to_route('invitations.create', trans('buttons.create_invitation'), null, ['class' => 'btn btn-warning']) }}
 	</div>
 
 	@if ($invitations->count())
