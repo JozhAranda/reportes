@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="container">
+<section class="col-md-12">
     <section class="header">
         <h1>Usuarios</h1>
         
@@ -26,7 +26,7 @@
                         {{$user->email}}
                     </td>
                     <td>
-                        {{$user->profile->name.' '.$user->profile->lastname}}
+                        {{--$user->profile->name.' '.$user->profile->lastname--}}
                     </td>
                     <td>
                         {{$user->role->title}}

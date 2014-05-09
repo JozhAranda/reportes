@@ -134,7 +134,13 @@
                         <i class="fa fa-bar-chart-o"></i>
                         <span>Estadísticas</span>
                     </a>                    
-                </li>                
+                </li> 
+                <li>
+                     <a href="invitations/">
+                        <i class="fa fa-envelope-o"></i>
+                        <span>Invitaciones</span>
+                    </a>                    
+                </li>               
             </ul>
         </div>
         <!-- end sidebar -->

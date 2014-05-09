@@ -13,6 +13,8 @@
 
 Route::get('/', array('as' => 'root', 'uses' => 'HomeController@index'));
 
+Route::resource('invitations', 'InvitationsController');
+
 Route::group(array('prefix' => 'users'), function() {
 
     Route::get('/', array('as' => 'users', 'uses' => 'UsersController@index'));
